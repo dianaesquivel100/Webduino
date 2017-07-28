@@ -10,7 +10,7 @@ app.get('/getFile', function (req, res) {
 })
 
 app.get('/index.htm', function (req, res) {
-   res.sendFile( __dirname + "/" + "index.html" );
+   res.sendFile( __dirname + "/" + "ColorPicker.html" );
 })
 
 app.get('/getValues', function (req, res) { 

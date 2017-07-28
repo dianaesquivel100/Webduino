@@ -46,15 +46,15 @@
 	  var rgb2 = R + "\n" + G + "\n" + B + "\n";  
 
     var textToSave = rgb2;
-
-    var hiddenElement = document.createElement('a');
+	window.location = "http://52.201.64.225:8081/getValues?red="+R+"&blue="+B+"&green="+G;
+ /*   var hiddenElement = document.createElement('a');
 
 
 
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
     hiddenElement.download = 'pruebaLed.txt';
-    hiddenElement.click();
+    hiddenElement.click();*/
     
       
 	});
