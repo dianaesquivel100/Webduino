@@ -39,12 +39,12 @@
 	  var img_data = canvas.getImageData(x, y, 1, 1).data;
 	  var R = img_data[0];
 	  var G = img_data[1];
-	  var B = img_data[2];  var rgb = R + ',' + G + ',' + B;
+	  var B = img_data[2]; 
+      var rgb = R + ',' + G + ',' + B;
 	  // making the color the value of the input
 	  $('#rgb input').val(rgb);
-      
-	});
-    var textToSave = rgb;
+
+       var textToSave = rgb;
 
     var hiddenElement = document.createElement('a');
 
@@ -53,6 +53,9 @@
     hiddenElement.download = 'pruebaLed.txt';
     hiddenElement.click();
     
+      
+	});
+   
 	
 
 </script>
