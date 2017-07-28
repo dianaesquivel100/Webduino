@@ -1,6 +1,6 @@
-int r = 11;
-int g = 10;
-int b = 9;
+int r = 3;
+int g = 5;
+int b = 6;
 
 void setup() {
   // put your setup code here, to run once:
