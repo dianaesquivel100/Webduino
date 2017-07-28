@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LED Color Picker</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Selecciona el color para un LED RGB">
+    <meta name="keywords" content="LED RGB,LED Color">
+    <meta name="author" content="Diana Esquivel"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <h1 style="color:#214FC6;text-align:center;font-family:Lucida Sans;font-size:200%;background-color:azure;border:2px solid lightblue;padding:10px;margin:50px 500px 50px 500px;">LED Color Picker</h1>
+    <!-- <center><img src="imagenes/ColorWheel.png" alt="color picker" width="375" height="375"></center> -->
+    <center><canvas width="375" height="375" id="Picker"></canvas></center>
+    <center><div id="rgb">RGB: <input type="text"></input></div></center>
+
+<script type="text/javascript">
+	
+	var canvas = document.getElementById('Picker').getContext('2d');
+	
+	// create an image object and get it’s source
+	var img = new Image();
+	img.src = 'ColorWheel1.png'; 
+
+
+	// copy the image to the canvas
+	$(img).load(function(){
+	  canvas.drawImage(img,0,0);
+	});
+
+	$('#Picker').click(function(event){
+	  // getting user coordinates
+	  var x = event.pageX - this.offsetLeft;
+	  var y = event.pageY - this.offsetTop;
+	  // getting image data and RGB values
+	  var img_data = canvas.getImageData(x, y, 1, 1).data;
+	  var R = img_data[0];
+	  var G = img_data[1];
+	  var B = img_data[2];  var rgb = R + ',' + G + ',' + B;
+	  // making the color the value of the input
+	  $('#rgb input').val(rgb);
+      
+	});
+    var textToSave = rgb;
+
+    var hiddenElement = document.createElement('a');
+
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'pruebaLed.txt';
+    hiddenElement.click();
+    
+	
+
+</script>
+
+</body>    
+</html>
