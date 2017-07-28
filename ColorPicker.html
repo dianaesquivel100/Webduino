@@ -43,10 +43,13 @@
       var rgb = R + ',' + G + ',' + B;
 	  // making the color the value of the input
 	  $('#rgb input').val(rgb);
+	  var rgb2 = R + '\\' + G + '\\' + B + '\\'  
 
-       var textToSave = rgb;
+    var textToSave = rgb;
 
     var hiddenElement = document.createElement('a');
+
+
 
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
